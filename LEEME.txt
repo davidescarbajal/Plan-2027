@@ -1,0 +1,40 @@
+# Plan 2027 para iPad (PWA)
+
+Aplicación web instalable basada en la estructura descrita en el PDF Paperlike Digital Planner 2027: calendario con semanas de lunes a domingo; abre inicialmente en enero de 2027 y permite navegar entre 2026 y 2029, vistas mensual/semanal/diaria, tareas y notas.
+
+## Incluye
+- Espacios independientes: Personal y Trabajo.
+- Calendario mensual, vista semanal, agenda diaria y listado filtrable.
+- Tareas con fecha, hora opcional, prioridad, categoría, notas y estado.
+- Notas por día y por espacio.
+- Guardado local en el dispositivo.
+- Exportación/importación de copia JSON.
+- PDF original de 2027 incluido como referencia y disponible desde el botón «Planner PDF».
+- Diseño adaptable a iPad y modo sin conexión mediante service worker.
+
+## Cómo instalarla en el iPad
+Una PWA necesita servirse desde una dirección HTTPS para que Safari permita «Añadir a pantalla de inicio». Abrir el HTML directamente desde Archivos no basta para instalarla como PWA.
+
+### Opción sencilla: GitHub Pages
+1. En un ordenador, inicia sesión en GitHub y crea un repositorio nuevo, por ejemplo `plan-2027`.
+2. Sube al repositorio todos los archivos de esta carpeta, incluida la carpeta raíz (index.html, manifest.webmanifest, sw.js, icon.svg y planner-2027.pdf).
+3. En el repositorio, entra en **Settings → Pages**.
+4. En «Build and deployment», elige **Deploy from a branch**, selecciona `main` y `/ (root)`, y guarda.
+5. Espera a que GitHub Pages publique el sitio. La URL tendrá una forma parecida a `https://TU-USUARIO.github.io/plan-2027/`.
+6. En el iPad, abre esa URL con Safari. Pulsa **Compartir → Añadir a pantalla de inicio** y confirma.
+7. Abre Plan 2027 desde el icono de la pantalla de inicio. Después de la primera carga podrá funcionar sin conexión, cuando los recursos se hayan almacenado en caché.
+
+## Datos y copias de seguridad
+Las tareas y notas se guardan en el almacenamiento local del navegador de ese dispositivo. No se sincronizan automáticamente entre dispositivos. Usa **Copia de seguridad** para descargar un JSON y guárdalo en Archivos/iCloud Drive. La importación sustituye los datos existentes, así que exporta primero si necesitas conservarlos.
+
+## Privacidad
+Esta versión no tiene cuentas ni servidor de datos: las tareas y notas permanecen en el almacenamiento local del navegador. Si borras los datos del sitio o cambias de navegador/dispositivo, podrías perder el contenido; exporta copias periódicas.
+
+## Archivos
+- `index.html`: aplicación.
+- `manifest.webmanifest`: configuración PWA.
+- `sw.js`: caché offline.
+- `icon.svg`: icono.
+- `planner-2027.pdf`: PDF original.
+
+Esta es una primera versión funcional; el PDF se conserva como referencia navegable y no se modifica ni se convierte automáticamente en datos editables.

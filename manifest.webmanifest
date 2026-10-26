@@ -1,0 +1,20 @@
+{
+  "name": "Plan 2027 · Organizador personal y laboral",
+  "short_name": "Plan 2027",
+  "description": "Planificador para iPad con espacios separados, calendario, tareas y notas.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4f4ef",
+  "theme_color": "#233a32",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
